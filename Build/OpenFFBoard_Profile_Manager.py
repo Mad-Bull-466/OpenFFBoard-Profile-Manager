@@ -12,18 +12,17 @@ from pystray import Icon, Menu, MenuItem
 from PIL import Image, ImageDraw
 from io import BytesIO
 
-LOG_FILE = "Activity.log"
-last_updated_by = None  # Tracks which program last updated profiles.json
-profiles_json_mtime = None  # Tracks the last modified time of profiles.json
-last_logged_line = ""   # Store last logged line to prevent duplicate writes
-no_target_detected_counter = 0  # Tracks how many times this condition is met
-max_retry_logs = 5  # Maximum times to log "No target processes detected"
-monitored_process = "OpenFFBoard.exe"  # The process you want to monitor and restart
-base_dir = "Profile Manager"  # Define the base directory
-profiles_dir = os.path.join(base_dir, "Profiles")  # Path to the Profiles folder inside the base directory
-last_detected_programs = set()  # This will store the names of programs we've already processed
+last_updated_by = None                              # Tracks which program last updated profiles.json
+profiles_json_mtime = None                          # Tracks the last modified time of profiles.json
+last_logged_line = ""                               # Store last logged line to prevent duplicate writes
+no_target_detected_counter = 0                      # Tracks how many times this condition is met
+max_retry_logs = 5                                  # Maximum times to log "No target processes detected"
+monitored_process = "OpenFFBoard.exe"               # The process you want to monitor and restart
+base_dir = "Profile Manager"                        # Define the base directory
+profiles_dir = os.path.join(base_dir, "Profiles")   # Path to the Profiles folder inside the base directory
+LOG_FILE = os.path.join(base_dir, "Activity.log")   # Save the log file to the Profile Manager folder
+last_detected_programs = set()                      # This will store the names of programs we've already processed
 started_flag = False
-
 
 def log_activity(message, force=False):
     """Logs activity with a timestamp to the console and a log file. Prevents redundant logs unless force is True."""
@@ -38,12 +37,16 @@ def log_activity(message, force=False):
     # Print to console
     print(log_message)
 
+    # Ensure the base directory exists
+    os.makedirs(base_dir, exist_ok=True)
+
     # Write to log file
     with open(LOG_FILE, 'a') as log_file:
         log_file.write(log_message + "\n")
 
     # Update the last logged line to prevent future duplicates
     last_logged_line = log_message
+
 
 # Function to load profile mapping from the JSON config file
 def load_profile_mapping():
