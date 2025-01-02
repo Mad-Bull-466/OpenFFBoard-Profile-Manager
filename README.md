@@ -2,6 +2,8 @@ OpenFFBoard Profile Manager
 
 A simple program used to automatically select different profiles based on the program currently open into the OpenFFBoard Configurator, making it easier to change games and without having to manually switch between different profiles each time.
 
+MAKE SURE YOU BACKUP YOUR CURRENT "profiles.json" IN ANOTHER FOLDER. THIS WILL DELETE ALL YOUR CURRENT PROFILES.
+
 Functions:  
 1) Profile Creation & Loading:
 When a program has started for the first time, the OpenFFBoard Profile Manager will create a profile text file that is linked to that program and
