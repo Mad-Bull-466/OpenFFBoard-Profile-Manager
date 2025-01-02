@@ -24,3 +24,5 @@ Minor annoyances:
 The only way I have found out how to load up new profiles automatically is by restarting the Configurator, so if you have made any changes to the profile 
 and have not saved the profile then any changes will disappear without warning.
 
+If you use different profiles for certain cars within the same game then this program may not be good for your use case, as this is only 1 profile per game. 
+
