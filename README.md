@@ -17,10 +17,12 @@ The Profile Manager will automatically create a file called `config.json` which 
 4) It will work with every version of OpenFFBoard configurator unless there's a revision of how it saves and loads profiles.
 
 
+
 Instillation and usage:
 
 Place the Profile Manager within the same directory as the OpenFFBoard configurator.
 The program will run in the system tray. 
+
 
 Minor annoyances:
 
