@@ -14,10 +14,10 @@ This includes when you shut down the game as well it will save it to the last ac
 3) Easy Configuration via config.json:
 The Profile Manager will automatically create a file called `config.json` which allows the user to modify and add new programs to create a profile. 
 
-4) It will work with every verion of OpenFFBoard configurator unless there's a revision of how it saves and loads profiles.
+4) It will work with every version of OpenFFBoard configurator unless there's a revision of how it saves and loads profiles.
 
 
-Instalation and usage:
+Instillation and usage:
 
 Place the Profile Manager within the same directory as the OpenFFBoard configurator.
 The program will run in the system tray. 
